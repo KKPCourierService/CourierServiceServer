@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	
+	Sing In client
+
+{% endblock %}
+
+{% block link %}
+{% endblock %}
+
+{% block content_title %}
+{% endblock %}
+	
+{% block content %}
+
+	<h1>Sign In</h1>
+	<form action="" method="post" name="singIn">
+	    {{form.hidden_tag()}}
+	    <p>
+	        Please enter your email:<br>
+	        {{form.email(size=80)}}<br>
+	        {% for error in form.errors.email %}
+	        <span style="color: red;">{{ error }}</span>
+	        {% endfor %}
+	    </p>
+	    <p>Please enter your password:<br>
+	        {{form.password(size=80)}}<br>
+	    </p>
+	    <p>
+	    	<br>
+	    	{{ form.remember_me }} Запомнить меня
+	    </p>
+	    <p><input type="submit" value="Sign In"></p>
+	</form>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	
+	Sing Up client
+
+{% endblock %}
+
+{% block link %}
+{% endblock %}
+
+{% block content_title %}
+{% endblock %}
+	
+{% block content %}
+
+	<h1>Sign Up</h1>
+	<form action="" method="post" name="singUpClient">
+	    {{form.hidden_tag()}}
+	    <p>
+	    	Please enter your name:<br>
+	    	{{form.name(size=80)}}<br>
+	    	Please enter your surname:<br>
+	    	{{form.surname(size=80)}}<br>
+	    	Please enter your patronymic:<br>
+	        {{form.patronymic(size=80)}}<br>
+			Please enter your Phone Number:<br>
+	        {{form.phoneNumber(size=80)}}<br>
+	        Please enter your email:<br>
+	        {{form.email(size=80)}}<br>
+	    </p>
+	    <p>Please enter your password:<br>
+	        {{form.password(size=80)}}<br>
+	        Please repeat your password:<br>
+	        {{form.confirm(size=80)}}<br>
+	    </p>
+	    <p><input type="submit" value="Sign Up"></p>
+	</form>
+
+{% endblock %}

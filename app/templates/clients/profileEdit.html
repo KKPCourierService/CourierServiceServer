@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	
+	Редактирование профиля
+
+{% endblock %}
+
+{% block content_title %}
+
+	Редактирование профиля: {{ client.name + ' ' + client.surname + ' ' + client.patronymic }}
+
+{% endblock %}
+	
+{% block content %}
+
+	<form action="" method="post" name="singIn">
+	    {{form.hidden_tag()}}
+	    <p>
+	        Имя: {{form.name(size=80)}}<br>
+	        {% for error in form.errors.name %}
+	        <span style="color: red;">{{ error }}</span>
+	        {% endfor %}
+
+	        Фамилия: {{form.surname(size=80)}}<br>
+	        {% for error in form.errors.surname %}
+	        <span style="color: red;">{{ error }}</span>
+	        {% endfor %}
+
+	        Отчество: {{form.patronymic(size=80)}}<br>
+	        {% for error in form.errors.patronymic %}
+	        <span style="color: red;">{{ error }}</span>
+	        {% endfor %}
+
+	        Номер телефона: {{form.phoneNumber(size=80)}}<br>
+	        {% for error in form.errors.phoneNumber %}
+	        <span style="color: red;">{{ error }}</span>
+	        {% endfor %}
+	    </p>
+	    <p>
+	    	<h1>Пароль: Возможно стоит сделать отдельно!</h1>
+	    </p>
+	    <p><input type="submit" value="Изменить"></p>
+	</form>
+
+{% endblock %}
