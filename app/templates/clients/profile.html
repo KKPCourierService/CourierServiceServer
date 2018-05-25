@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	
+	{{ client.name + ' ' + client.surname }}
+
+{% endblock %}
+
+{% block content_title %}
+
+	{{ client.name + ' ' + client.surname + ' ' + client.patronymic }}
+
+{% endblock %}
+	
+{% block content %}
+
+	<div>
+		<p>
+			{{ client.name + ' ' + client.surname + ' ' +client.patronymic }}
+		</p>
+
+		<p>
+			Номер телефона: {{ client.phoneNumber }}
+		</p>
+
+		<p>
+			Email: {{ client.email }}
+		</p>
+
+	</div>
+
+	<div>
+		{% if client.lastSeen %} <i>Был последний раз: {{ client.lastSeen }}</i> {% endif %}
+	</div>
+
+	<div>
+		{% if client.id == g.user.id %} 
+		<a href="{{ url_for('clients.getOrders', id=client.id) }}">Заказы</a> 
+		{% endif %}
+	</div>
+
+	<div>
+		{% if client.id == g.user.id %} 
+		<a href="{{ url_for('clients.editProfile', id=client.id) }}">Изменить профиль</a> 
+		{% endif %}
+	</div>
+{% endblock %}

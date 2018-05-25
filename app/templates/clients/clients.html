@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	
+	Клиенты
+
+{% endblock %}
+
+{% block content_title %}
+
+	Список клиентов
+
+{% endblock %}
+	
+{% block content %}
+
+	{% for client in clients %}
+		<p>
+			<a href="{{ url_for('clients.getClient', id=client.id) }}"> {{ client.id }}{{ '. ' + client.name + ' ' + client.surname }} </a>
+		</p>
+	{% endfor %}
+
+{% endblock %}

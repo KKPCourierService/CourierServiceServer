@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	
+	Create order
+
+{% endblock %}
+
+{% block link %}
+{% endblock %}
+
+{% block content_title %}
+{% endblock %}
+	
+{% block content %}
+
+	<h1>Create order</h1>
+	<form action="" method="post" name="createOrder">
+	    {{ form.hidden_tag() }}
+	    <p>
+	    	Please enter type:<br>
+	    	{{ form.typeId }}<br>
+	    	Please enter status:<br>
+	    	{{ form.statusId }}<br>
+	    	Please enter numberOfAddresses:<br>
+	        {{ form.numberOfAddresses }}<br>
+			Please enter informationAboutAddresses:<br>
+	        {{ form.informationAboutAddresses }}<br>
+	        Please enter description:<br>
+	        {{ form.description }}<br>
+	    	Please enter cost:<br>
+	        {{ form.cost }}<br>
+	    </p>
+	    <p><input type="submit" value="Create"></p>
+	</form>
+
+{% endblock %}

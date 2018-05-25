@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	
+	{{ order.id }}{{ ' Order.' }}
+
+{% endblock %}
+
+{% block content_title %}
+
+	{{ order.id }}{{ ' ' + order.description }}
+
+{% endblock %}
+	
+{% block content %}
+
+	<div>
+		<p>
+			{{ 'Number order: ' }}{{ order.id }} <br>
+			{{ 'Client: ' + client.name + ' ' + client.surname + ' ' + client.patronymic }}<br>
+			{{ 'Type: ' + type.name }}<br>
+			{{ 'Status: ' + status.name }}
+		</p>
+		<p>
+			{{ 'Number of addresses: ' }}{{ order.numberOfAddresses }}<br>
+			{{ 'Information about addresses: ' + order.informationAboutAddresses }}<br>
+			{{ 'Date of creation: ' }}{{ order.dateOfCreation }}<br>
+			{{ 'Description: ' + order.description }}
+		</p>
+	</div>
+{% endblock %}
